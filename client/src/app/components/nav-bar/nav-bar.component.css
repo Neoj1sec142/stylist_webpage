@@ -1,0 +1,14 @@
+mat-toolbar {
+    display: flex;
+    justify-content: space-evenly;
+    background-color: var(--mdc-theme-on-surface);
+    color: var(--background-color);
+    margin-right: 8px; /* Adjust spacing to the right of the icon */
+  }
+  
+  /* Custom class for adjusting icon size, if FontAwesome classes are insufficient */
+  .mat-icon-lg {
+    font-size: 1.33333em; /* Equivalent to FontAwesome's lg size */
+    height: 1.33333em;
+    width: 1.33333em;
+  }

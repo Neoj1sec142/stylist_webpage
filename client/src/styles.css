@@ -1,4 +1,18 @@
 /* You can add global styles to this file, and also import other style files */
-
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Roboto:wght@400;700&family=Dancing+Script:wght@400;700&display=swap');
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body { margin: 0; font-family: 'Poppins', sans-serif; background-color: var(--background-color);}  
+.h1, .h2, .h3, .h4 { font-family: 'Dancing Script', cursive; }
+:root {
+    --primary-color: #FFD700; /* Gold */
+    --secondary-color: #FF69B4; /* Hot Pink */
+    --accent-color: #8A2BE2; /* Blue Violet */
+    --background-color: #f1e0e5; /* Lavender Blush */
+    --text-color: #333333; /* Dark Gray */
+  
+    /* Snackbar colors */
+    --mdc-theme-surface: #f8bbd0; /* Light Pink */
+    --mdc-theme-on-surface: #4a148c; /* Deep Purple */
+    --mdc-theme-primary: #ad1457; /* Vivid Pink */
+    --mdc-theme-on-primary: #ffffff; /* White */
+  }

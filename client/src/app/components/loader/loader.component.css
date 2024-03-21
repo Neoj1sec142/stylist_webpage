@@ -1,0 +1,24 @@
+.spinner-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    background: linear-gradient(var(--tertiary-color), var(--primary-bg-color), var(--secondary-color));
+  }
+  
+  .spinner {
+    color: var(--primary-bg-color);
+    border: 5px solid var(--tertiary-color);
+    animation: spinEffect 2s linear infinite;
+  }
+  
+  @keyframes spinEffect {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  
