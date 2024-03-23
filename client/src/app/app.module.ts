@@ -17,7 +17,7 @@ import { HomePageComponent } from './components/home-page/home-page.component';
 import { AboutPageComponent } from './components/about-page/about-page.component';
 import { NotfoundComponent } from './components/notfound/notfound.component';
 import { ContactPageComponent } from './components/contact-page/contact-page.component';
-
+import { AdminManageComponent } from './components/admin-manage/admin-manage.component';
 
 // Material Imports
 import { MatButtonModule } from '@angular/material/button'
@@ -31,6 +31,8 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatCardModule } from '@angular/material/card';
 import { MatListModule } from '@angular/material/list';
+import { MatTabsModule } from '@angular/material/tabs';
+
 
 
 
@@ -47,7 +49,8 @@ import { MatListModule } from '@angular/material/list';
     HomePageComponent,
     AboutPageComponent,
     NotfoundComponent,
-    ContactPageComponent
+    ContactPageComponent,
+    AdminManageComponent
   ],
   imports: [
     BrowserModule,
@@ -67,7 +70,8 @@ import { MatListModule } from '@angular/material/list';
     MatGridListModule,
     MatChipsModule,
     MatCardModule,
-    MatListModule
+    MatListModule,
+    MatTabsModule
   ],
   providers: [
     {
