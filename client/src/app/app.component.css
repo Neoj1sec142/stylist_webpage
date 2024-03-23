@@ -1,3 +1,31 @@
-.main-container{
-    min-height: 100vh;
+.main-container {
+  min-height: 100vh;
+  position: relative;
+  z-index: 0;
+  border-radius: 0;
+  background-origin: border-box;
+  background-clip: padding-box, border-box; /* Ensure background clipping is correct */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  overflow: hidden; /* Hides the overflow from pseudo-elements */
+}
+
+@media screen and (min-width: 1024px) {
+  .main-container::before, .main-container::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100px; /* Adjust this value based on desired visual width of the gradient border */
+    z-index: -1;
+  }
+
+  .main-container::before {
+    left: 0;
+    background: radial-gradient(circle at center, #FFD700, #FF69B4, #8A2BE2);
+  }
+
+  .main-container::after {
+    right: 0;
+    background: radial-gradient(circle at center, #FFD700, #FF69B4, #8A2BE2);
+  }
 }

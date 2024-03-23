@@ -1,0 +1,57 @@
+mat-toolbar {
+    display: flex;
+    justify-content: space-evenly;
+    background-color: var(--accent-color);
+    color: var(--background-color);
+}
+
+.hero-image {
+    background-image: url('../../../assets/photos/banner1.webp');
+    background-size: cover; 
+    background-position: center;
+    height: 450px;
+    background-size: cover;
+    position: relative;
+    color: white;
+}
+  
+.overlay-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+  
+.bio-card {
+    max-width: 400px;
+    margin: auto;
+    margin-top: 50px;
+    padding: 10px 20px;
+}
+.bio-card h1{
+    margin-bottom: 10px;
+}
+
+  
+.bio-header-image {
+    background-image: url('../../../assets/photos/DSC_5456.jpg');
+    background-size: cover;
+}
+
+.contact-cta{
+    text-align: center;
+    padding: 10px 20px;
+}
+
+.chips {
+    display: flex;
+    overflow-x: auto;
+    white-space: nowrap;
+    padding: 10px;
+    gap: 8px; /* Spacing between chips */
+  }
+  
+  mat-chip {
+    cursor: default; /* Make chips appear non-clickable */
+  }

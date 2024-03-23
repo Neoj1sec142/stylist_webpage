@@ -7,8 +7,8 @@ mat-toolbar {
   }
   
   /* Custom class for adjusting icon size, if FontAwesome classes are insufficient */
-  .mat-icon-lg {
+.mat-icon-lg {
     font-size: 1.33333em; /* Equivalent to FontAwesome's lg size */
     height: 1.33333em;
     width: 1.33333em;
-  }
+}

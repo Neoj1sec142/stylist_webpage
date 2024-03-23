@@ -15,4 +15,59 @@ body { margin: 0; font-family: 'Poppins', sans-serif; background-color: var(--ba
     --mdc-theme-on-surface: #4a148c; /* Deep Purple */
     --mdc-theme-primary: #ad1457; /* Vivid Pink */
     --mdc-theme-on-primary: #ffffff; /* White */
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
   }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInFromLeft {
+  from {
+    transform: translateX(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInFromRight {
+  from {
+    transform: translateX(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.animated {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.fadeIn {
+  animation-name: fadeIn;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+
+.slideInFromLeft {
+  animation-name: slideInFromLeft;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+
+.slideInFromRight {
+  animation-name: slideInFromRight;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+
+

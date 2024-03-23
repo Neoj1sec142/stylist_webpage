@@ -1,9 +1,10 @@
 <app-header-bar></app-header-bar>
 <app-nav-bar></app-nav-bar>
 <app-loader *ngIf="loadingSvc.isLoading$ | async;"></app-loader>
-<ng-container>
+<ng-container *ngIf="(loadingSvc.isLoading$ | async) === false">
   <div class="main-container">
     <router-outlet></router-outlet>
   </div>
+  
 </ng-container>
 <app-footer-bar></app-footer-bar>

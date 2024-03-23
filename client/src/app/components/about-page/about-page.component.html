@@ -1,3 +1,48 @@
-<p>
-  about-page works!
-</p>
+<mat-toolbar>
+  <span>About Meredith's Style Haven!</span>
+</mat-toolbar>
+
+<div class="hero-image">
+  <div class="overlay-text">
+    <h1 class="mb-4 mt-3">Discover Your Best Self</h1>
+    <p>Join Meredith on a style journey that celebrates you.</p>
+  </div>
+</div>
+
+<mat-card class="bio-card">
+  <mat-card-header>
+    <div mat-card-avatar class="bio-header-image"></div>
+    <mat-card-title class="mb-1">Meredith, Your Personal Stylist</mat-card-title>
+    <mat-card-subtitle class="mb-2">A journey to style, confidence, and fun!</mat-card-subtitle>
+  </mat-card-header>
+  <img mat-card-image src="../../../assets/photos/DSC_5456.jpg" alt="Meredith" style="border-radius: 13px;">
+  <mat-card-content>
+    <p class="mt-3">With a decade of experience in making people look and feel fabulous, Meredith combines her expert styling skills with her bubbly personality to offer a styling experience like no other.</p>
+  </mat-card-content>
+</mat-card>
+
+
+<mat-grid-list cols="3" rowHeight="300px">
+  <mat-grid-tile *ngFor="let usp of usps">
+    <img src="{{usp.image}}" alt="{{usp.title}}">
+    <mat-grid-tile-footer>
+      <h3 class="mat-h3">{{usp.title}} </h3>
+    </mat-grid-tile-footer>
+  </mat-grid-tile>
+</mat-grid-list>
+
+
+<div class="fun-facts" *ngIf="funFacts.length > 0">
+  <h2 class="text-center">Did You Know?</h2>
+  <div class="chips">
+    <mat-chip *ngFor="let fact of funFacts" color="primary" selected>{{fact}}</mat-chip>
+  </div>
+</div>
+
+<div>Reviews</div>
+
+<div class="contact-cta">
+  <h2>Ready to Transform Your Style?</h2>
+  <p>Let's chat about your style goals and dreams. Get in touch today!</p>
+  <button mat-raised-button color="accent">Contact Meredith</button>
+</div>

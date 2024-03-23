@@ -14,6 +14,11 @@ import { FooterBarComponent } from './components/footer-bar/footer-bar.component
 import { HeaderBarComponent } from './components/header-bar/header-bar.component';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { HomePageComponent } from './components/home-page/home-page.component';
+import { AboutPageComponent } from './components/about-page/about-page.component';
+import { NotfoundComponent } from './components/notfound/notfound.component';
+import { ContactPageComponent } from './components/contact-page/contact-page.component';
+
+
 // Material Imports
 import { MatButtonModule } from '@angular/material/button'
 import { MatIconModule } from '@angular/material/icon'
@@ -22,6 +27,14 @@ import { MatSnackBarModule } from '@angular/material/snack-bar'
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner'
 import { MatDialogModule } from '@angular/material/dialog'
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatChipsModule } from '@angular/material/chips';
+import { MatCardModule } from '@angular/material/card';
+import { MatListModule } from '@angular/material/list';
+
+
+
+
 
 
 @NgModule({
@@ -32,6 +45,9 @@ import { MatToolbarModule } from '@angular/material/toolbar';
     NavBarComponent,
     HeaderBarComponent,
     HomePageComponent,
+    AboutPageComponent,
+    NotfoundComponent,
+    ContactPageComponent
   ],
   imports: [
     BrowserModule,
@@ -48,6 +64,10 @@ import { MatToolbarModule } from '@angular/material/toolbar';
     MatDialogModule,
     MatProgressSpinnerModule,
     MatToolbarModule,
+    MatGridListModule,
+    MatChipsModule,
+    MatCardModule,
+    MatListModule
   ],
   providers: [
     {

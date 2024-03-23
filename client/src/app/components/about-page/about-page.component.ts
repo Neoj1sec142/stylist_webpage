@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnInit } from '@angular/core';
+import { haircutFacts } from '../../helpers/article.data'
 
 @Component({
   selector: 'app-about-page',
@@ -6,10 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./about-page.component.css']
 })
 export class AboutPageComponent implements OnInit {
-
+  funFacts: string[] = haircutFacts;
+  usps: any[]= []
   constructor() { }
 
   ngOnInit() {
   }
-
+  
 }
