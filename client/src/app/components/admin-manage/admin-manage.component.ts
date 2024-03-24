@@ -11,6 +11,7 @@ import { PortfolioService } from 'src/app/services/portfolio.service';
 export class AdminManageComponent implements OnInit {
   selectedTab = 0;
   gForm!: FormGroup;
+  iForm!: FormGroup;
   constructor(
     private fb: FormBuilder,
     private snack: MatSnackBar,
@@ -18,15 +19,20 @@ export class AdminManageComponent implements OnInit {
     ){ }
   
   ngOnInit() {
-    this.initForm()
+    this.initForms()
   }
 
-  initForm(){
+  initForms(){
     this.gForm = this.fb.group({
       'client_name': ['', Validators.required],
       'client_email': ['', Validators.email],
       'client_social': [''],
       'style_description': ['', Validators.required]
+    })
+    this.iForm = this.fb.group({
+      'img': [{}, Validators.required],
+      'img_description': [''],
+      'img_group': [0, Validators.required]
     })
   }
 
@@ -34,10 +40,12 @@ export class AdminManageComponent implements OnInit {
     if(this.gForm.valid){
       this.portSvc.createGroup(this.gForm.value).subscribe(
         (res: any) => {
+          console.log(res, "Success")
           this.snack.open('Image Group Created Successfully! =)', 'Close', {
             duration: 1500,
             panelClass: ['snackbar-success']
           })
+          this.selectedTab = 1;
         }, (error: any) => {
           console.log(error, "Error")
           this.snack.open('Error Creating Image Group =(', 'Close', {
@@ -53,5 +61,30 @@ export class AdminManageComponent implements OnInit {
     }
   }
   
+  submitItem(){
+    if(this.iForm.valid){
+      this.portSvc.createImg(this.iForm.value).subscribe(
+        (res: any) => {
+          console.log(res, "Success")
+          this.snack.open('Image Created Successfully! =)', 'Close', {
+            duration: 1500,
+            panelClass: ['snackbar-success']
+          })
+          this.selectedTab = 1;
+        }, (error: any) => {
+          console.log(error, "Error")
+          this.snack.open('Error Creating Image =(', 'Close', {
+            duration: 1500,
+            panelClass: ['snackbar-error']
+          })
+        })
+    }else{
+      this.snack.open('Error: You didnt fill out the img or group. =(', 'Close', {
+        duration: 1500,
+        panelClass: ['snackbar-error']
+      })
+    }
+  }
+
   reset(){ this.gForm.reset() };
 }

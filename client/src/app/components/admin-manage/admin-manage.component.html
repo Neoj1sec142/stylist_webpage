@@ -40,6 +40,10 @@
       </form>
     <!-- Form End -->
   </div>
-  <div *ngSwitchCase="1">Add an Image to a Group</div>
+  <div *ngSwitchCase="1">
+    <form  [formGroup]="iForm" (ngSubmit)="submitItem()">
+
+    </form>
+  </div>
   <div *ngSwitchCase="2">More Manage Options</div>
 </div>
