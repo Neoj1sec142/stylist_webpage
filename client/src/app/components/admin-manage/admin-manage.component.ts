@@ -53,4 +53,5 @@ export class AdminManageComponent implements OnInit {
     }
   }
   
+  reset(){ this.gForm.reset() };
 }
