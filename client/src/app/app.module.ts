@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
@@ -32,7 +33,8 @@ import { MatChipsModule } from '@angular/material/chips';
 import { MatCardModule } from '@angular/material/card';
 import { MatListModule } from '@angular/material/list';
 import { MatTabsModule } from '@angular/material/tabs';
-
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatSelectModule } from '@angular/material/select';
 
 
 
@@ -59,6 +61,7 @@ import { MatTabsModule } from '@angular/material/tabs';
     FormsModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
+    HttpClientModule,
     // Material UI
     MatButtonModule,
     MatIconModule,
@@ -71,7 +74,9 @@ import { MatTabsModule } from '@angular/material/tabs';
     MatChipsModule,
     MatCardModule,
     MatListModule,
-    MatTabsModule
+    MatTabsModule,
+    MatFormFieldModule,
+    MatSelectModule,
   ],
   providers: [
     {

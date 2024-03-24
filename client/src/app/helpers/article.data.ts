@@ -54,4 +54,15 @@ export const haircutFacts: string[] = [
     "In many cultures, a haircut is part of ritualistic traditions symbolizing purification and a fresh start.",
     "The term 'bob cut' originated from the 1920s, symbolizing women's liberation and freedom.",
     "Believe it or not, haircuts can affect your mood. Many report feeling lighter, happier, and more energized after a cut."
-  ];
+];
+
+export interface RestrictedUrl{
+    name: string;
+    url: string;
+}
+export const restrictedUrls: RestrictedUrl[] = [
+    { name: 'CreateGroup', url: 'portfolio/img-group/create/' },
+    { name: 'CreateImg', url: 'portfolio/img-item/create/' },
+    { name: 'DeleteGroup', url: 'portfolio/img-group/destroy/<int:pk>/' },
+    { name: 'DeleteItem', url: 'portfolio/img-item/destroy/<int:pk>/' },
+]
