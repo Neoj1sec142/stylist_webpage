@@ -5,12 +5,14 @@ import { AboutPageComponent } from './components/about-page/about-page.component
 import { NotfoundComponent } from './components/notfound/notfound.component';
 import { ContactPageComponent } from './components/contact-page/contact-page.component';
 import { AdminManageComponent } from './components/admin-manage/admin-manage.component';
+import { PortfolioMainComponent } from './components/portfolio-main/portfolio-main.component';
 
 const routes: Routes = [
   { path:'', component: HomePageComponent, pathMatch: 'full' },
   { path: 'about', component: AboutPageComponent },
   { path: 'contact', component: ContactPageComponent },
   { path: 'manage', component: AdminManageComponent },
+  { path: 'portfolio', component: PortfolioMainComponent },
   { path: '**', component: NotfoundComponent },
 ];
 

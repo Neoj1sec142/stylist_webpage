@@ -9,13 +9,20 @@ body { margin: 0; font-family: 'Poppins', sans-serif; background-color: var(--ba
     --accent-color: #8A2BE2; /* Blue Violet */
     --background-color: #f1e0e5; /* Lavender Blush */
     --text-color: #333333; /* Dark Gray */
-  
-    /* Snackbar colors */
     --mdc-theme-surface: #f8bbd0; /* Light Pink */
     --mdc-theme-on-surface: #4a148c; /* Deep Purple */
     --mdc-theme-primary: #ad1457; /* Vivid Pink */
     --mdc-theme-on-primary: #ffffff; /* White */
+    
+    /* Image Styles */
+    --image-width: 100%; /* Responsive width, adjust as necessary */
+    --image-max-width: 20rem; /* Max width to maintain uniformity */
+    --image-height: auto; /* Maintain aspect ratio */
+    --border-radius: 1.5rem; /* Rounded corners for the 'bubbly' look */
+    --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    --transition-effect: transform 0.3s ease;
 }
+
 @keyframes fadeIn {
   from {
     opacity: 0;

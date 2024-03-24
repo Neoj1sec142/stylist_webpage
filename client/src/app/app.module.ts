@@ -7,6 +7,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
+
 // Component Imports
 import { AppComponent } from './app.component';
 import { LoadingInterceptor } from './helpers/loading.interceptor';
@@ -19,6 +20,7 @@ import { AboutPageComponent } from './components/about-page/about-page.component
 import { NotfoundComponent } from './components/notfound/notfound.component';
 import { ContactPageComponent } from './components/contact-page/contact-page.component';
 import { AdminManageComponent } from './components/admin-manage/admin-manage.component';
+import { PortfolioMainComponent } from './components/portfolio-main/portfolio-main.component';
 
 // Material Imports
 import { MatButtonModule } from '@angular/material/button'
@@ -38,9 +40,6 @@ import { MatSelectModule } from '@angular/material/select';
 
 
 
-
-
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -52,7 +51,8 @@ import { MatSelectModule } from '@angular/material/select';
     AboutPageComponent,
     NotfoundComponent,
     ContactPageComponent,
-    AdminManageComponent
+    AdminManageComponent,
+    PortfolioMainComponent
   ],
   imports: [
     BrowserModule,

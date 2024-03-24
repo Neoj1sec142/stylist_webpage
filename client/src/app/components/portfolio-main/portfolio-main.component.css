@@ -1,0 +1,13 @@
+.port-img img {
+    width: var(--image-width);
+    max-width: var(--image-max-width);
+    height: var(--image-height);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    transition: var(--transition-effect);
+}
+   
+.port-img img:hover {
+    transform: scale(1.05);
+}
+  
