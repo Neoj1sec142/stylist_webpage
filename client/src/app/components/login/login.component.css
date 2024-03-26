@@ -1,0 +1,40 @@
+button.mat-primary{
+    margin-bottom: 15px;
+}
+
+.auth-container {
+    background-color: var(--primary-color);
+    color: #aaa9ad;
+    padding: 50px;
+    border: 1px solid #aaa9ad;
+    box-shadow: 0 5px 10px 0 rgba(161, 56, 173, 0.2), 0 6px 20px 0 rgba(255, 255, 255, 0.19);
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.auth-container button {
+    color: white;
+}
+
+.auth-container mat-form-field {
+    margin-bottom: 15px;
+}
+
+.auth-header {
+    font-size: 20px;
+    font-weight: bold;
+    color: #aaa;
+    margin-bottom: 20px;
+}
+
+.auth-link {
+    color: silver;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .auth-container {
+        padding: 30px;
+    }
+}

@@ -15,24 +15,35 @@ export class LoadingInterceptor implements HttpInterceptor {
     private loadingSvc: LoadingService
     ) { }
 
-  intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
+    intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
+      this.loadingSvc.addRequest(request.url);
+      
+      let token;
+      
+        token = localStorage.getItem('access_token') ?? "";
+        let authReq;
+        if(token){
+          authReq= request.clone({
+            headers: request.headers.set('Authorization', `JWT ${token}`)
+          })
+        }else{
+          authReq= request.clone({})
+        };
+        return this.handleRequest(authReq, next);
+      
+        // return this.handleRequest(request, next);
+      }
     
     
-    this.loadingSvc.addRequest(request.url);
-      const authReq= request.clone({})
-      return this.handleRequest(authReq, next);
+    private handleRequest(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
+      // this.showLoading();
+      return next.handle(request).pipe(
+        delay(250),
+        finalize(() => {
+          this.loadingSvc.removeRequest(request.url);
+        })
+      );
     }
-  
-  
-  private handleRequest(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-    // this.showLoading();
-    return next.handle(request).pipe(
-      delay(250),
-      finalize(() => {
-        this.loadingSvc.removeRequest(request.url);
-      })
-    );
-  }
 
   // private showLoading(): void {
   //   console.log("Loading")

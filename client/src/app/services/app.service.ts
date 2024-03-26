@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class AppService {
-  private baseUrl: string = "http://127.0.0.1/";
+  private baseUrl: string = "http://127.0.0.1:8000/";
   public apiUrl: string = this.baseUrl + 'api/'
   constructor() { }
   getApiUrl(){ return this.apiUrl; }

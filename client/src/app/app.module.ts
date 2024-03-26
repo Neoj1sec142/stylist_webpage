@@ -14,6 +14,8 @@ import { LoadingInterceptor } from './helpers/loading.interceptor';
 import { LoaderComponent } from './components/loader/loader.component';
 import { FooterBarComponent } from './components/footer-bar/footer-bar.component';
 import { HeaderBarComponent } from './components/header-bar/header-bar.component';
+import { LoginComponent } from './components/login/login.component';
+import { LogoutComponent } from './components/logout/logout.component';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { HomePageComponent } from './components/home-page/home-page.component';
 import { AboutPageComponent } from './components/about-page/about-page.component';
@@ -40,6 +42,7 @@ import { MatSelectModule } from '@angular/material/select';
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -47,12 +50,15 @@ import { MatSelectModule } from '@angular/material/select';
     FooterBarComponent,
     NavBarComponent,
     HeaderBarComponent,
+    LoginComponent,
+    LogoutComponent,
     HomePageComponent,
     AboutPageComponent,
     NotfoundComponent,
     ContactPageComponent,
     AdminManageComponent,
     PortfolioMainComponent
+    
   ],
   imports: [
     BrowserModule,
