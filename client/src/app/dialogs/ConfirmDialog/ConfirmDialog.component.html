@@ -1,0 +1,8 @@
+<h2 mat-dialog-title>Confirm</h2>
+<div mat-dialog-content>
+  <p>{{ data.question }}</p>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onReject()">Reject</button>
+  <button mat-button color="primary" (click)="onConfirm()">Confirm</button>
+</div>

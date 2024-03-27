@@ -58,9 +58,11 @@
   
             <div class="form-row">
               <mat-label>Img Group</mat-label>
-              <select>
-                <option></option>
-              </select>
+              <mat-select (click)="onOpenSelect()">
+                <mat-option *ngFor="let option of existingGroups" [value]="option.id">
+                  {{ option.client_name }}
+                </mat-option>
+              </mat-select>
             </div>
           </div>
         </div>

@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { ImageGroup } from 'src/app/models/image-group.model';
 import { PortfolioService } from 'src/app/services/portfolio.service';
 
 @Component({
@@ -8,20 +9,26 @@ import { PortfolioService } from 'src/app/services/portfolio.service';
   templateUrl: './admin-manage.component.html',
   styleUrls: ['./admin-manage.component.css']
 })
-export class AdminManageComponent implements OnInit {
+export class AdminManageComponent implements OnInit, AfterViewInit {
   selectedTab = 0;
   gForm!: FormGroup;
   iForm!: FormGroup;
+  set: boolean = false;
+  existingGroups: ImageGroup[] = [];
   constructor(
     private fb: FormBuilder,
     private snack: MatSnackBar,
     private portSvc: PortfolioService
     ){ }
   
+  
   ngOnInit() {
+   
     this.initForms()
   }
-
+  ngAfterViewInit(): void {
+    //  this.getGroups();
+  }
   initForms(){
     this.gForm = this.fb.group({
       'client_name': ['', Validators.required],
@@ -30,12 +37,12 @@ export class AdminManageComponent implements OnInit {
       'style_description': ['', Validators.required]
     })
     this.iForm = this.fb.group({
-      'img': [{}, Validators.required],
+      'img': ['', Validators.required],
       'img_description': [''],
       'img_group': [0, Validators.required]
     })
   }
-
+  
   submitGroup(){
     if(this.gForm.valid){
       this.portSvc.createGroup(this.gForm.value).subscribe(
@@ -45,6 +52,7 @@ export class AdminManageComponent implements OnInit {
             duration: 1500,
             panelClass: ['snackbar-success']
           })
+          this.getGroups();
           this.selectedTab = 1;
         }, (error: any) => {
           console.log(error, "Error")
@@ -70,6 +78,7 @@ export class AdminManageComponent implements OnInit {
             duration: 1500,
             panelClass: ['snackbar-success']
           })
+          this.getGroups();
           this.selectedTab = 1;
         }, (error: any) => {
           console.log(error, "Error")
@@ -85,6 +94,24 @@ export class AdminManageComponent implements OnInit {
       })
     }
   }
-
+  onOpenSelect(){
+    this.getGroups()
+  }
   reset(){ this.gForm.reset(); this.iForm.reset(); };
+
+  // Private Helpers
+
+  private getGroups(){
+    this.portSvc.getAllGroups().subscribe({
+      next: (groups: ImageGroup[]) => {
+        console.log(groups)
+        this.existingGroups = groups;
+      },
+      error: (error: any) => {
+        console.log(error);
+      }
+    });
+    this.selectedTab = 1
+    
+  }
 }

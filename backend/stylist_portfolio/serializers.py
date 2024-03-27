@@ -19,14 +19,14 @@ class ImgGroupSerializer(serializers.ModelSerializer):
     
     class Meta:
         model = ImageGroup
-        fields = ('id', 'client_name', 'client_email', 'client_social', 'style_description', 'photographer_link', 'imgs', 'date_created', 'date_modified')
+        fields = '__all__'
 
 class ImageItemSerializer(serializers.ModelSerializer):
     img_group = ImgGroupSerializer(many=False, read_only=True)
     # comments = ItemCommentSerializer(many=True, read_only=True)
     class Meta:
         model = ImageItem
-        fields = ('id', 'img', 'img_group', 'date_created') #, 'comments'
+        fields = '__all__' #, 'comments'
         
 
 class ImgGroupSampleSerializer(serializers.ModelSerializer):
