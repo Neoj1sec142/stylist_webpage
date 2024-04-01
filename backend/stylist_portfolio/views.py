@@ -15,22 +15,22 @@ class ImageGroupList(generics.ListAPIView):
     permission_classes = (permissions.AllowAny,)
     queryset = ImageGroup.objects.all()
     serializer_class = ImgGroupSerializer
-    def get(self, request, *args, **kwargs):
-        try:
-            return super(ImageGroupList, self).get(request, *args, **kwargs)
-        except Exception as e:
-            return Response({'error': e}, status=status.HTTP_400_BAD_REQUEST)
+    # def get(self, request, *args, **kwargs):
+    #     try:
+    #         return super(ImageGroupList, self).get(request, *args, **kwargs)
+    #     except Exception as e:
+    #         return Response({'error': e}, status=status.HTTP_400_BAD_REQUEST)
         
 class ImageGroupCreate(generics.CreateAPIView):
     permission_classes = (permissions.IsAdminUser,)
     queryset = ImageGroup.objects.all()
     serializer_class = ImgGroupSerializer
     
-    def post(self, request, *args, **kwargs):
-        try:
-            return super(ImageGroupCreate, self).post(request, *args, **kwargs)
-        except Exception as e:
-            return Response({'error': e}, status=status.HTTP_400_BAD_REQUEST)
+    # def post(self, request, *args, **kwargs):
+    #     try:
+    #         return super(ImageGroupCreate, self).post(request, *args, **kwargs)
+    #     except Exception as e:
+    #         return Response({'error': e}, status=status.HTTP_400_BAD_REQUEST)
         
 
 class ImageGroupDetail(generics.RetrieveAPIView):

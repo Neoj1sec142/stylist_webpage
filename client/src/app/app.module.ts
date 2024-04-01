@@ -23,6 +23,10 @@ import { NotfoundComponent } from './components/notfound/notfound.component';
 import { ContactPageComponent } from './components/contact-page/contact-page.component';
 import { AdminManageComponent } from './components/admin-manage/admin-manage.component';
 import { PortfolioMainComponent } from './components/portfolio-main/portfolio-main.component';
+import { AdminImageComponent } from './components/admin-image/admin-image.component';
+import { AdminGroupsComponent } from './components/admin-groups/admin-groups.component';
+import { AdminTrackingComponent } from './components/admin-tracking/admin-tracking.component';
+import { AdminUtilsComponent } from './components/admin-utils/admin-utils.component';
 
 // Material Imports
 import { MatButtonModule } from '@angular/material/button'
@@ -43,6 +47,7 @@ import { MatSelectModule } from '@angular/material/select';
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -57,6 +62,10 @@ import { MatSelectModule } from '@angular/material/select';
     NotfoundComponent,
     ContactPageComponent,
     AdminManageComponent,
+    AdminImageComponent,
+    AdminGroupsComponent,
+    AdminTrackingComponent,
+    AdminUtilsComponent,
     PortfolioMainComponent
     
   ],
@@ -85,11 +94,11 @@ import { MatSelectModule } from '@angular/material/select';
     MatSelectModule,
   ],
   providers: [
-    {
-      provide: HTTP_INTERCEPTORS,
-      useClass: LoadingInterceptor,
-      multi: true,
-    },
+    // {
+    //   provide: HTTP_INTERCEPTORS,
+    //   useClass: LoadingInterceptor,
+    //   multi: true,
+    // },
   ],
   bootstrap: [AppComponent]
 })

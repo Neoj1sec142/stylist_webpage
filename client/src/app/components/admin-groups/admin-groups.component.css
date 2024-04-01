@@ -1,0 +1,19 @@
+.form-row{
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.form-row input{
+    border-radius: 13px;
+    width: 300px;
+    height: 35px;
+    margin-top: 5px;
+}
+
+.form-row mat-label{
+    text-decoration: underline;
+}

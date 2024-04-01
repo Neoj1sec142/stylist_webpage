@@ -1,77 +1,22 @@
 <mat-tab-group (selectedIndexChange)="selectedTab = $event">
   <mat-tab label="New Img Group"></mat-tab>
   <mat-tab label="Add an Image"></mat-tab>
-  <mat-tab label="More Manage"></mat-tab>
-</mat-tab-group>
+  <mat-tab label="App Tracking"></mat-tab>
+  <mat-tab label="App Utilities"></mat-tab>
+</mat-tab-group> 
 
 
-<div [ngSwitch]="selectedTab">
-  <div *ngSwitchCase="0">
-    <!-- Form Start -->
-      <form [formGroup]="gForm" (ngSubmit)="submitGroup()">
-        <div class="d-flex justify-content-center">
-          <div class="p-3 m-2">
-            <div class="form-row">
-              <mat-label>Title</mat-label>
-              <input matInput formControlName="client_name" placeholder="Client's Name">
-              <mat-error *ngIf="gForm.get('client_name')?.invalid">Client Name is required</mat-error>
-            </div>
-  
-            <div class="form-row">
-              <mat-label>Client Email</mat-label>
-              <input matInput formControlName="client_email"   placeholder="Client's Email"/>
-            </div>
-  
-            <div class="form-row">
-              <mat-label>Client Social</mat-label>
-              <input matInput formControlName="client_social"  placeholder="Client's Social">
-            </div>
-  
-            <div class="form-row">
-              <mat-label>Style Description</mat-label>
-              <input matInput formControlName="style_description"  placeholder="Description of Style">
-            </div>
-          </div>
-        </div>
-        <div class="d-flex justify-content-evenly">
-          <button mat-raised-button type="submit">Submit</button>
-          <button mat-raised-button type="button" color="warn" (click)="reset()">Reset</button>
-        </div>
-      </form>
-    <!-- Form End -->
+<div [ngSwitch]="selectedTab"> 
+  <div *ngSwitchCase="0"> 
+  <app-admin-groups></app-admin-groups>
   </div>
   <div *ngSwitchCase="1">
-    <!-- Form Start -->
-    <form  [formGroup]="iForm" (ngSubmit)="submitItem()">
-        <div class="d-flex justify-content-center">
-          <div class="p-3 m-2">
-            <div class="form-row">
-              <mat-label>Img</mat-label>
-              <input type="file" matInput formControlName="img" placeholder="Img">
-              <mat-error *ngIf="gForm.get('img')?.invalid">Img is required</mat-error>
-            </div>
-  
-            <div class="form-row">
-              <mat-label>Img Description</mat-label>
-              <textarea matInput formControlName="img_description"   placeholder="Img Desciption"></textarea>
-            </div>
-  
-            <div class="form-row">
-              <mat-label>Img Group</mat-label>
-              <mat-select (click)="onOpenSelect()">
-                <mat-option *ngFor="let option of existingGroups" [value]="option.id">
-                  {{ option.client_name }}
-                </mat-option>
-              </mat-select>
-            </div>
-          </div>
-        </div>
-        <div class="d-flex justify-content-evenly">
-          <button mat-raised-button type="submit">Submit</button>
-          <button mat-raised-button type="button" color="warn" (click)="reset()">Reset</button>
-        </div>
-    </form>
-    <!-- Form End -->
+    <app-admin-image></app-admin-image>
   </div>
-  <div *ngSwitchCase="2">More Manage Options</div>
+  <div *ngSwitchCase="2">
+    <app-admin-tracking></app-admin-tracking>
+  </div>
+  <div *ngSwitchCase="3">
+    <app-admin-tracking></app-admin-tracking>
+  </div>
 </div>

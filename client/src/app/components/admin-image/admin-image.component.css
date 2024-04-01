@@ -1,0 +1,11 @@
+.form-row{
+    padding: 10px 20px;
+    border: 1px dotted white;
+    display: flex;
+    flex-direction: column;
+    border-radius: 13px;
+}
+.form-row textarea, input, select{
+    border-radius: 13px;
+    padding: 10px;
+}

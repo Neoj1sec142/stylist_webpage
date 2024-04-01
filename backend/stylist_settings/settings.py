@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'corsheaders',
     'rest_framework',
     'stylist_portfolio',
+    'utilities',
     'rest_framework_simplejwt.token_blacklist',
 ]
 

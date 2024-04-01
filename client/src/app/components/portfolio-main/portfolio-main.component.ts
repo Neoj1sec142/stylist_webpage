@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./portfolio-main.component.css']
 })
 export class PortfolioMainComponent implements OnInit {
-
+selectedTab = 0
   constructor() { }
 
   ngOnInit() {

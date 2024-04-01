@@ -10,6 +10,8 @@ import { LoginComponent } from './components/login/login.component';
 import { LogoutComponent } from './components/logout/logout.component';
 import { AuthGuard } from './helpers/auth-guard';
 import { StaffGuard } from './helpers/staff-guard';
+import { AdminImageComponent } from './components/admin-image/admin-image.component';
+import { AdminGroupsComponent } from './components/admin-groups/admin-groups.component';
 
 const routes: Routes = [
   { path:'', component: HomePageComponent, pathMatch: 'full' },
@@ -17,6 +19,8 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'logout', component: LogoutComponent, canActivate: [AuthGuard] },
   { path: 'manage', component: AdminManageComponent, canActivate: [StaffGuard] },
+  // { path: 'images', component: AdminImageComponent, canActivate: [StaffGuard] },
+  // { path: 'groups', component: AdminGroupsComponent, canActivate: [StaffGuard] },
   { path: 'contact', component: ContactPageComponent },
   { path: 'portfolio', component: PortfolioMainComponent },
   { path: '**', component: NotfoundComponent },

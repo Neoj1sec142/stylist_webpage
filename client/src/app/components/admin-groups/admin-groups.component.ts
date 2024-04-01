@@ -1,17 +1,15 @@
-import { AfterViewInit, Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { ImageGroup } from 'src/app/models/image-group.model';
 import { PortfolioService } from 'src/app/services/portfolio.service';
 
 @Component({
-  selector: 'app-admin-manage',
-  templateUrl: './admin-manage.component.html',
-  styleUrls: ['./admin-manage.component.css']
+  selector: 'app-admin-groups',
+  templateUrl: './admin-groups.component.html',
+  styleUrls: ['./admin-groups.component.css']
 })
-export class AdminManageComponent implements OnInit {
+export class AdminGroupsComponent implements OnInit {
   gForm!: FormGroup;
-  selectedTab = 0;
   constructor(
     private fb: FormBuilder,
     private snack: MatSnackBar,
