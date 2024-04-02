@@ -59,7 +59,17 @@ class CreateTracker(generics.CreateAPIView):
     permission_classes = (permissions.IsAdminUser,)
     queryset = TrackingIncrementor.objects.all()
     serializer_class = TrackingIncrementorSerializer
+
+class TrackerList(generics.ListAPIView):
+    permission_classes = (permissions.AllowAny,)
+    queryset = TrackingIncrementor.objects.all()
+    serializer_class = TrackingIncrementorSerializer
     
+class TrackerDetail(generics.RetrieveAPIView):
+    permission_classes = (permissions.AllowAny,)
+    queryset = TrackingIncrementor.objects.all()
+    serializer_class = TrackingIncrementorSerializer
+ 
 class IncrementTracker(APIView):
     
     def put(self, request, pk, *args, **kwargs):

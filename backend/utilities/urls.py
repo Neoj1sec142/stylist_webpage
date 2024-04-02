@@ -17,5 +17,7 @@ urlpatterns = [
     path('cat-group/destroy/<int:pk>/', CategoryGroupDestroy.as_view(), name='cat-group-destroy'),
     # Tracking Urls
     path('tracking/create/', CreateTracker.as_view(), name='create-tracker'),
-    path('tracking/<int:pk>', IncrementTracker.as_view(), name='increment-tracker')
+    path('tracking/increment/<int:pk>/', IncrementTracker.as_view(), name='increment-tracker'),
+    path('tracking/<int:pk>/', TrackerDetail.as_view(), name='tracker-detail'),
+    path('tracking/', TrackerList.as_view(), name='tracker-list'),
 ]

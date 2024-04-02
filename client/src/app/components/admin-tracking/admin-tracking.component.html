@@ -1,3 +1,75 @@
-<p>
-  admin-tracking works!
-</p>
+<mat-tab-group (selectedIndexChange)="trackTab = $event">
+  <mat-tab label="Tracking Home"></mat-tab>
+  <mat-tab label="Analytics"></mat-tab>
+  <mat-tab label="New Tracker"></mat-tab>
+</mat-tab-group> 
+
+<div [ngSwitch]="trackTab"> 
+  <div *ngSwitchCase="0"> 
+    <div class="mat-elevation-z8">
+      <table mat-table [dataSource]="tDataSrc" class="mat-elevation-z8">
+       
+    
+        <!-- Title Column -->
+        <ng-container matColumnDef="title">
+          <th mat-header-cell *matHeaderCellDef> Title </th>
+          <td mat-cell *matCellDef="let element"> {{element.title}} </td>
+        </ng-container>
+    
+        <!-- Description Column -->
+        <ng-container matColumnDef="description">
+          <th mat-header-cell *matHeaderCellDef> Description </th>
+          <td mat-cell *matCellDef="let element"> {{element.description}} </td>
+        </ng-container>
+
+         <!-- Count Column -->
+         <ng-container matColumnDef="count">
+          <th mat-header-cell *matHeaderCellDef> Count </th>
+          <td mat-cell *matCellDef="let element"> {{element.count}} </td>
+        </ng-container>
+        
+        <!-- Max Field Length Column -->
+        <ng-container matColumnDef="max_field_len">
+          <th mat-header-cell *matHeaderCellDef> Max Field Len </th>
+          <td mat-cell *matCellDef="let element"> {{element.max_field_len}} </td>
+        </ng-container>
+        
+        <!-- Times Incremented Column -->
+        <ng-container matColumnDef="times_incremented">
+          <th mat-header-cell *matHeaderCellDef> Times Incremented </th>
+          <td mat-cell *matCellDef="let element"> {{element.times_incremented}} </td>
+        </ng-container>
+        
+        <!-- Created Column -->
+        <ng-container matColumnDef="date_created">
+          <th mat-header-cell *matHeaderCellDef> Date Created </th>
+          <td mat-cell *matCellDef="let element"> {{element.date_created | date}} </td>
+        </ng-container>
+        
+        <!-- Last Updated Column -->
+        <ng-container matColumnDef="date_modified">
+          <th mat-header-cell *matHeaderCellDef> Date Modified </th>
+          <td mat-cell *matCellDef="let element"> {{element.date_modified | date}} </td>
+        </ng-container>
+        
+        <tr mat-header-row *matHeaderRowDef="tColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: tColumns;"></tr>
+      </table>
+    </div>
+  </div>
+  <div *ngSwitchCase="1"> 
+    
+  </div>
+  <div *ngSwitchCase="2"> 
+    <form [formGroup]="tForm">
+      <div class="form-group">
+        <label for="title">~ Tracker Title ~</label>
+        <input matInput placeholder="Category Group Title" name="title" formControlName="title" type="text">
+      </div>
+      <div class="form-group">
+        <label for="description">~ Description ~</label>
+        <textarea matInput placeholder="Description" name="description" formControlName="description" type="text"></textarea>
+      </div>
+    </form>
+  </div>
+</div>
