@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Category, CategoryGroup, TrackingIncrementor
+from .models import Category, CategoryGroup, TrackingIncrementor, LoggerModel
 
 class CategorySerializer(serializers.ModelSerializer):
     class Meta:
@@ -15,4 +15,9 @@ class CategoryGroupSerializer(serializers.ModelSerializer):
 class TrackingIncrementorSerializer(serializers.ModelSerializer):
     class Meta:
         model = TrackingIncrementor
+        fields = '__all__'
+        
+class LoggerSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = LoggerModel
         fields = '__all__'

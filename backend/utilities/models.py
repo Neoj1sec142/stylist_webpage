@@ -23,4 +23,19 @@ class TrackingIncrementor(models.Model):
     date_modified = models.DateTimeField(auto_now=True, null=True, blank=True) 
     def __str__(self):
         return self.title
+ 
+class LogType(models.TextChoices):
+    ERROR = 'Error'
+    WARNING = 'Warning'
+    NORMAL = 'Normal'
+    SEVERE_ISSUE = 'Admin Notice'
+        
+   
+class LoggerModel(models.Model):
+    log_type = models.CharField(max_length=50, choices=LogType.choices, default=LogType.NORMAL)
+    content = models.TextField()
+    date_created = models.DateTimeField(auto_now_add=True, null=True, blank=True)
+    has_been_viewed = models.BooleanField(default=False, blank=True)
+    def __str__(self):
+        return 'Viewed ' if self.has_been_viewed else 'NEW! ' + f'| {str(self.date_created)}' 
     
