@@ -1,0 +1,50 @@
+.form-group{
+    padding: 20px 40px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+label{
+    padding: 10px 0px;
+    font-weight: 700;
+}
+input{
+    width: 80%;
+    border-radius: 13px;
+    height: 30px;
+}
+
+.group-select{
+    padding: 20px 40px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.group-select select{
+    width: 80%;
+    border-radius: 13px;
+    height: 30px;
+}
+
+.group-cats{
+    height: 75px;
+    border: 1px solid black;
+    margin: 10px 20px 20px 20px;
+    border-radius: 13px;
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.342);
+}
+.selection-cats{
+    margin: 0px 50px 10px 50px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 10px;
+}
+
+.button-box{
+    margin: 10px 0px 20px 0px;
+}

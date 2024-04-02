@@ -11,7 +11,7 @@ import { PortfolioService } from 'src/app/services/portfolio.service';
 })
 export class AdminManageComponent implements OnInit {
   gForm!: FormGroup;
-  selectedTab = 0;
+  selectedTab = 3;
   constructor(
     private fb: FormBuilder,
     private snack: MatSnackBar,

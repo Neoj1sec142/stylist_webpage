@@ -11,6 +11,7 @@ urlpatterns = [
     # Category Group URLs
     path('cat-group/', CategoryGroupList.as_view(), name='cat-group-list'),
     path('cat-group/create/', CategoryGroupCreate.as_view(), name='cat-group-create'),
+    path('cat-group/update/', CategoryGroupUpdate.as_view(), name='cat-group-update'),
     path('cat-group/<int:pk>/', CategoryGroupDetail.as_view(), name='cat-group-detail'),
     path('cat-group/destroy/<int:pk>/', CategoryGroupDestroy.as_view(), name='cat-group-destroy'),
     # # ItemComment URLs

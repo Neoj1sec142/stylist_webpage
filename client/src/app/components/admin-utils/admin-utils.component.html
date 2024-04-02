@@ -1,4 +1,53 @@
 <mat-tab-group (selectedIndexChange)="catTab = $event">
   <mat-tab label="New Category"></mat-tab>
   <mat-tab label="New Category Group"></mat-tab>
+  <mat-tab label="Add Categories to Group"></mat-tab>
 </mat-tab-group> 
+
+<div [ngSwitch]="catTab"> 
+  <div *ngSwitchCase="0"> 
+    <form [formGroup]="cForm">
+      <div class="form-group">
+        <label for="name">~ Category Name ~</label>
+        <input matInput placeholder="Category Name" name="name" formControlName="name" type="text">
+      </div>
+    </form>
+  </div>
+  <div *ngSwitchCase="1">
+    <ng-container *ngIf="catTab === 1">
+      <form [formGroup]="cgForm">
+        <div class="form-group">
+          <label for="title">~ Category Group Title ~</label>
+          <input matInput placeholder="Category Group Title" name="title" formControlName="title" type="text">
+        </div>
+      </form>
+    </ng-container>
+  </div>
+  <div *ngSwitchCase="2">
+    <ng-container *ngIf="catTab === 2">
+      <div class="group-select">
+        <label *ngIf="!selectedGroup" for="selectedGroup">~ Select a Category ~</label>
+        <select name="selectedGroup">
+          <option value="''"></option >
+          <option *ngFor="let group of dummyGroups"   (click)="changeCat(group)">{{group.title}}</option>
+        </select>
+      </div>
+      <div class="group-cats">
+        <!-- Where the cats that are in this group or going in this group go -->
+      </div>
+      <div class="selection-cats">
+        
+        <mat-chip *ngFor="let cat of dummyCats">{{cat.name}}</mat-chip>
+        
+      </div>
+    </ng-container>
+  </div>
+</div>
+
+
+<div class="button-box">
+  <div class="d-flex justify-content-evenly">
+    <button type="button" class="btn btn-outline-danger">Clear</button>
+    <button type="submit" class="btn btn-outline-success">Submit</button>
+  </div>
+</div>

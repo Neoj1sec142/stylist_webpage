@@ -33,6 +33,11 @@ class CategoryGroupCreate(generics.CreateAPIView):
     permission_classes = (permissions.IsAdminUser,)
     queryset = CategoryGroup.objects.all()
     serializer_class = CategoryGroupSerializer
+
+class CategoryGroupUpdate(generics.RetrieveUpdateDestroyAPIView):
+    permission_classes = (permissions.IsAdminUser,)
+    queryset = CategoryGroup.objects.all()
+    serializer_class = CategoryGroupSerializer
     
 class CategoryGroupDestroy(generics.DestroyAPIView):
     permission_classes = (permissions.IsAdminUser,)

@@ -21,5 +21,6 @@ export class UtilityService {
   getCatGroups(){ return this.http.get<CategoryGroup[]>(this.apiUrl + 'cat-group/'); };
   getCatGroup(id: number){ return this.http.get<CategoryGroup[]>(this.apiUrl + `cat-group/${id}/`); };
   createCatGroup(group: CategoryGroup){ return this.http.post<CategoryGroup>(this.apiUrl + 'cat-group/create/', group); };
+  updateCatGroup(group: CategoryGroup){ return this.http.put<CategoryGroup>(this.apiUrl + 'cat-group/update/', group); };
   deleteCatGroup(id: number){ return this.http.delete<any>(this.apiUrl + `cat-group/destroy/${id}/`); };
 }
