@@ -1,6 +1,7 @@
 from django.urls import path
 from .views import *
 
+
 urlpatterns = [
     # # Utitliy Views
     # Category URLs
@@ -14,7 +15,7 @@ urlpatterns = [
     path('cat-group/update/', CategoryGroupUpdate.as_view(), name='cat-group-update'),
     path('cat-group/<int:pk>/', CategoryGroupDetail.as_view(), name='cat-group-detail'),
     path('cat-group/destroy/<int:pk>/', CategoryGroupDestroy.as_view(), name='cat-group-destroy'),
-    # # ItemComment URLs
-    # path('item-comment/', ItemCommentList.as_view(), name='item-comment-list'),
-    # path('item-comment/<int:pk>/', ItemCommentDetail.as_view(), name='item-comment-detail'),
+    # Tracking Urls
+    path('tracking/create/', CreateTracker.as_view(), name='create-tracker'),
+    path('tracking/<int:pk>', IncrementTracker.as_view(), name='increment-tracker')
 ]
