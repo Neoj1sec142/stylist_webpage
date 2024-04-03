@@ -26,9 +26,9 @@ export class UtilityService {
   deleteCatGroup(id: number){ return this.http.delete<any>(this.apiUrl + `cat-group/destroy/${id}/`); };
 
 
-  getApts(){}
-  getApt(id?: number){}
-  createApt(apt: AppointmentDto){}
-  updateApt(apt: Appointment){}
-  deleteApt(id: number){}
+  getApts(){ return this.http.get<Appointment[]>(this.apiUrl + 'appointment/'); }
+  getApt(id?: number){ return this.http.get<Appointment>(this.apiUrl + `appointment/${id}/`); }
+  createApt(apt: AppointmentDto){ return this.http.post<Appointment>(this.apiUrl + 'appointment/create/', apt); }
+  updateApt(apt: Appointment){ return this.http.put<Appointment>(this.apiUrl + `appointment/${apt.id}/`, apt); }
+  deleteApt(id: number){ return this.http.delete<any>(this.apiUrl + `appointment/${id}/`); }
 }

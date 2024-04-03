@@ -34,10 +34,11 @@
       </div>
       <div class="group-cats">
         <!-- Where the cats that are in this group or going in this group go -->
+        <mat-chip *ngFor="let cat of selectedGroupCats">{{cat.name}}</mat-chip>
       </div>
       <div class="selection-cats">
         
-        <mat-chip *ngFor="let cat of dummyCats">{{cat.name}}</mat-chip>
+        <mat-chip *ngFor="let cat of dummyCats" (click)="moveChip(cat)">{{cat.name}}</mat-chip>
         
       </div>
     </ng-container>

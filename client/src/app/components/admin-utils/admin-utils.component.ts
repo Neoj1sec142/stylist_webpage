@@ -15,7 +15,7 @@ export class AdminUtilsComponent implements OnInit {
   selectedGroupCats: Category[] = [];
   cForm!: FormGroup;
   cgForm!: FormGroup;
-  catTab = 2;
+  catTab = 0;
   groups: CategoryGroup[] = []
   dummyCats: Category[] = [
     {id: 0, name: "Long Cuts"},{id: 1, name: "Medium Length Cuts"},{id: 2, name: "Pixie Cuts"},
@@ -53,6 +53,13 @@ export class AdminUtilsComponent implements OnInit {
         break;
     }
   }
+  moveChip(cat: Category){
+    if(!this.selectedGroupCats.includes(cat)){
+      this.dummyCats.filter(c => c.id !== cat.id);
+      this.selectedGroupCats.push(cat);
+    }
+  }
+
   changeCat(event: any){
     console.log(event, "EVENT")
   }
