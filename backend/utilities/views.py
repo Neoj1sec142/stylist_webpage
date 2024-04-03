@@ -1,10 +1,9 @@
 from rest_framework import generics, permissions, status
-from .models import Category, CategoryGroup, TrackingIncrementor
-from .serializers import CategorySerializer, CategoryGroupSerializer, TrackingIncrementorSerializer
+from .models import Category, CategoryGroup, TrackingIncrementor, Appointment
+from .serializers import CategorySerializer, CategoryGroupSerializer, TrackingIncrementorSerializer, AppointmentSerializer
 from django.http import JsonResponse
 from rest_framework.views import APIView
 from rest_framework.response import Response
-
 
 # error_msg, status_code = log_error(self.request, e)
 # error_serializer = ErrorMessageSerializer(error_msg)
@@ -90,3 +89,18 @@ class IncrementTracker(APIView):
     def get(self, request, pk, *args, **kwargs):
         pass
     
+
+class CreateAppointment(generics.CreateAPIView):
+    permission_classes = (permissions.AllowAny,)
+    queryset = Appointment.objects.all()
+    serializer_class = AppointmentSerializer
+
+class AppointmentList(generics.ListAPIView):
+    permission_classes = (permissions.IsAdminUser,)
+    queryset = Appointment.objects.all()
+    serializer_class = AppointmentSerializer
+    
+class AppointmentDetail(generics.RetrieveUpdateDestroyAPIView):
+    permission_classes = (permissions.IsAdminUser,)
+    queryset = Appointment.objects.all()
+    serializer_class = AppointmentSerializer

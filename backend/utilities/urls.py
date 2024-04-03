@@ -20,4 +20,8 @@ urlpatterns = [
     path('tracking/increment/<int:pk>/', IncrementTracker.as_view(), name='increment-tracker'),
     path('tracking/<int:pk>/', TrackerDetail.as_view(), name='tracker-detail'),
     path('tracking/', TrackerList.as_view(), name='tracker-list'),
+    # Appointment Urls
+    path('appointment/create/', CreateAppointment.as_view(), name='create-appointment'),
+    path('appointment/<int:pk>/', AppointmentDetail.as_view(), name='appointment-detail'),
+    path('appointment/', AppointmentList.as_view(), name='appointment-list'),
 ]

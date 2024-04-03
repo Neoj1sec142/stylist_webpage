@@ -27,6 +27,7 @@ import { AdminImageComponent } from './components/admin-image/admin-image.compon
 import { AdminGroupsComponent } from './components/admin-groups/admin-groups.component';
 import { AdminTrackingComponent } from './components/admin-tracking/admin-tracking.component';
 import { AdminUtilsComponent } from './components/admin-utils/admin-utils.component';
+import { AppointmentDialog } from './dialogs/AppointmentDialog/AppointmentDialog.component';
 
 // Material Imports
 import { MatButtonModule } from '@angular/material/button'
@@ -43,6 +44,7 @@ import { MatListModule } from '@angular/material/list';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
+
 
 
 
@@ -66,8 +68,8 @@ import { MatSelectModule } from '@angular/material/select';
     AdminGroupsComponent,
     AdminTrackingComponent,
     AdminUtilsComponent,
-    PortfolioMainComponent
-    
+    PortfolioMainComponent,
+    AppointmentDialog
   ],
   imports: [
     BrowserModule,
