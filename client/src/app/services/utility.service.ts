@@ -3,6 +3,7 @@ import { AppService } from './app.service';
 import { HttpClient } from '@angular/common/http';
 import { Category } from '../models/category.model';
 import { CategoryGroup } from '../models/category-group.model';
+import { Appointment, AppointmentDto } from '../models/appointment.model';
 
 @Injectable({
   providedIn: 'root'
@@ -23,4 +24,11 @@ export class UtilityService {
   createCatGroup(group: CategoryGroup){ return this.http.post<CategoryGroup>(this.apiUrl + 'cat-group/create/', group); };
   updateCatGroup(group: CategoryGroup){ return this.http.put<CategoryGroup>(this.apiUrl + 'cat-group/update/', group); };
   deleteCatGroup(id: number){ return this.http.delete<any>(this.apiUrl + `cat-group/destroy/${id}/`); };
+
+
+  getApts(){}
+  getApt(id?: number){}
+  createApt(apt: AppointmentDto){}
+  updateApt(apt: Appointment){}
+  deleteApt(id: number){}
 }
