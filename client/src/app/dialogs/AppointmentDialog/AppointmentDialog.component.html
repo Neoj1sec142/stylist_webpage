@@ -1,3 +1,29 @@
-<p>
-  AppointmentDialog works!
-</p>
+<form [formGroup]="aptForm" (ngSubmit)="submit()">
+  <div class="auth-frm">
+      <mat-form-field>
+          <mat-label>Date</mat-label>
+          <input matInput formControlName="req_date">
+          <mat-error *ngIf="aptForm.get('req_date')?.invalid">Date you are requesting is required</mat-error>
+      </mat-form-field>
+      <mat-form-field>
+          <mat-label>Time</mat-label>
+          <input matInput type="req_time" formControlName="req_time">
+          <mat-error *ngIf="aptForm.get('req_time')?.invalid">Time you are requesting is required</mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Name</mat-label>
+        <input matInput formControlName="client_name">
+        <mat-error *ngIf="aptForm.get('client_name')?.invalid">Name is required</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Email</mat-label>
+        <input matInput type="email" formControlName="email">
+        <mat-error *ngIf="aptForm.get('email')?.invalid">Email is required</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Phone</mat-label>
+      <input matInput type="phone_number" formControlName="phone_number">
+  </mat-form-field>
+  </div>
+  <button mat-raised-button color="primary" type="submit" [disabled]="aptForm.invalid">Login</button>
+</form>

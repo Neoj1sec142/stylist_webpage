@@ -1,5 +1,5 @@
 import { Component, Inject, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 
 @Component({
@@ -16,12 +16,18 @@ aptForm!: FormGroup;
   ) {}
 
   ngOnInit() {
-
+    this.initForm();
   }
-
+  submit(){
+    this.dialogRef.close(this.aptForm.value)
+  }
   private initForm(){
     this.aptForm = this.fb.group({
-      
+      'req_date': ['', Validators.required],
+      'req_time': ['', Validators.required],
+      'client_name': ['', Validators.required],
+      'email': ['', Validators.email, Validators.required],
+      'phone': ['']
     })
   }
 

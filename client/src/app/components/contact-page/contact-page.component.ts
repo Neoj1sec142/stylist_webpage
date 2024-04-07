@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DialogService } from 'src/app/services/dialog.service';
 
 @Component({
   selector: 'app-contact-page',
@@ -6,6 +7,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./contact-page.component.css']
 })
 export class ContactPageComponent implements OnInit {
-  constructor() { }
+  constructor(private dialogSvc: DialogService){ }
   ngOnInit() { }
+
+  aptForm(){
+    this.dialogSvc.openAptBox().subscribe(
+      (res: any) => {
+        console.log(res)
+      })
+  }
 }

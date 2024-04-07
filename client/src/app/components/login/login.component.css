@@ -3,17 +3,21 @@ button.mat-primary{
 }
 
 .auth-container {
-    background-color: var(--primary-color);
+    background-color: var(--secondary-color);
     color: #aaa9ad;
     padding: 50px;
-    border: 1px solid #aaa9ad;
-    box-shadow: 0 5px 10px 0 rgba(161, 56, 173, 0.2), 0 6px 20px 0 rgba(255, 255, 255, 0.19);
+    border: 1px solid #dad9dc;
+    box-shadow: 5px 5px 10px -5px rgba(161, 56, 173, 0.52), 5px 6px 20px -5px rgba(255, 255, 255, 0.52);
     border-radius: 10px;
     margin-bottom: 20px;
+    margin-top: 50px;
+    z-index: 1;
 }
 
 .auth-container button {
-    color: white;
+    background-color: #f7c4e8;
+    color: black;
+    margin-left: 40%;
 }
 
 .auth-container mat-form-field {
@@ -23,8 +27,10 @@ button.mat-primary{
 .auth-header {
     font-size: 20px;
     font-weight: bold;
-    color: #aaa;
+    color: #f7c4e8;
     margin-bottom: 20px;
+    text-align: center;
+    font-size:xx-large;
 }
 
 .auth-link {
@@ -33,6 +39,21 @@ button.mat-primary{
     text-decoration: underline;
 }
 
+.auth-frm{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+input{
+    border-radius: 13px;
+    height: 40px;
+}
+/* @media screen and (min-width: 768px) {
+    .auth-container::before, .auth-container::after {
+        width: 60%;
+        margin-left: 20%;
+    }
+} */
 @media (max-width: 768px) {
     .auth-container {
         padding: 30px;
