@@ -47,7 +47,7 @@ export class UserService {
             this.setUserRole(user);
             this.currentUserSubject.next(user)
             this.accessTokenSubject.next(access_token);
-            this.router.navigate(['/home'])
+            this.router.navigate(['/'])
         }else{
             this.logout()
         }
