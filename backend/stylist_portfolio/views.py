@@ -22,7 +22,7 @@ class ImageGroupList(generics.ListAPIView):
     #         return Response({'error': e}, status=status.HTTP_400_BAD_REQUEST)
         
 class ImageGroupCreate(generics.CreateAPIView):
-    permission_classes = (permissions.IsAdminUser,)
+    permission_classes = (permissions.AllowAny,)
     queryset = ImageGroup.objects.all()
     serializer_class = ImgGroupSerializer
     
@@ -86,7 +86,7 @@ class ImageItemList(generics.ListAPIView):
             return Response({'error': e}, status=status.HTTP_400_BAD_REQUEST)
     
 class ImageItemCreate(generics.CreateAPIView):
-    permission_classes = (permissions.IsAdminUser,)
+    permission_classes = (permissions.AllowAny,)
     queryset = ImageItem.objects.all()
     serializer_class = ImageItemSerializer
     parser_classes = (MultiPartParser, FormParser)

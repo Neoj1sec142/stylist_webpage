@@ -30,20 +30,20 @@ export class AdminImageComponent implements OnInit {
   submitItem(){
     console.log(this.iForm.value)
     if(this.iForm.valid){
-      // this.portSvc.createImg(this.iForm.value).subscribe(
-      //   (res: any) => {
-      //     console.log(res, "Success")
-      //     this.snack.open('Image Created Successfully! =)', 'Close', {
-      //       duration: 1500,
-      //       panelClass: ['snackbar-success']
-      //     })
-      //   }, (error: any) => {
-      //     console.log(error, "Error")
-      //     this.snack.open('Error Creating Image =(', 'Close', {
-      //       duration: 1500,
-      //       panelClass: ['snackbar-error']
-      //     })
-      //   })
+      this.portSvc.createImg(this.iForm.value).subscribe(
+        (res: any) => {
+          console.log(res, "Success")
+          this.snack.open('Image Created Successfully! =)', 'Close', {
+            duration: 1500,
+            panelClass: ['snackbar-success']
+          })
+        }, (error: any) => {
+          console.log(error, "Error")
+          this.snack.open('Error Creating Image =(', 'Close', {
+            duration: 1500,
+            panelClass: ['snackbar-error']
+          })
+        })
     }else{
       this.snack.open('Error: You didnt fill out the img or group. =(', 'Close', {
         duration: 1500,

@@ -121,10 +121,9 @@ public removeUser(): void{
   public getAuthHeaders(): any {
       const token = this.getAccessToken();
       if (token) {
-          let headers = new HttpHeaders({
-              'Content-Type': 'application/json',
-              Authorization: `JWT ${token}`
-          });
+          let headers = new HttpHeaders();
+          headers.append("Content-Type", "application/json");
+          headers.append("Authorization", `JWT ${token}`);
           return headers
       } else {
           return new HttpHeaders({
